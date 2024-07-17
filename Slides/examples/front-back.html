@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        .calculator, .code-section {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .result {
+            margin-top: 10px;
+        }
+        pre {
+            text-align: left;
+            background: #f8f8f8;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="calculator">
+        <h2>Cube Calculator</h2>
+        <input type="number" id="number" placeholder="Enter a number">
+        <button onclick="calculateCube()">Calculate Cube</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <div class="code-section">
+        <h3>Frontend Code</h3>
+        <pre>
+&lt;div class=&quot;calculator&quot;&gt;
+    &lt;h2&gt;Cube Calculator&lt;/h2&gt;
+    &lt;input type=&quot;number&quot; id=&quot;number&quot; placeholder=&quot;Enter a number&quot;&gt;
+    &lt;button onclick=&quot;calculateCube()&quot;&gt;Calculate Cube&lt;/button&gt;
+    &lt;div class=&quot;result&quot; id=&quot;result&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+    </div>
+
+    <div class="code-section">
+        <h3>Backend Code</h3>
+        <pre>
+&lt;script&gt;
+function calculateCube() {
+    const number = document.getElementById('number').value;
+    const cube = Math.pow(number, 3);
+    document.getElementById('result').innerText = `The cube of ${number} is ${cube}`;
+}
+&lt;/script&gt;
+        </pre>
+    </div>
+</div>
+
+</body>
+
+<script>
+    function calculateCube() {
+        const number = document.getElementById('number').value;
+        const cube = Math.pow(number, 3);
+        document.getElementById('result').innerText = `The cube of ${number} is ${cube}`;
+    }
+</script>
+</html>
