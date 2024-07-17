@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+{% endblock %}
+
+
+{% block content %}
+
+<h4>
+    Thank you very much for participating in this experiment. Lastly, we have a few general questions for you. Please answer them conscientiously and carefully.</h4>
+
+{% formfield player.age %}
+
+{% formfield player.gender %}
+
+{% formfield player.siblings %}
+
+{% formfield player.previous_participation %}
+
+{% formfield player.currently_employed %}
+
+{% formfield player.currently_studying %}
+
+{% formfield player.study_semester %}
+
+{% formfield player.study_course %}
+
+{% next_button %}
+
+{% endblock %}

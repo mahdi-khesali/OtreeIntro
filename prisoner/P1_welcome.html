@@ -1,0 +1,42 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+{% endblock %}
+
+{% block styles %}
+<style>
+    .increased-line-spacing {
+        line-height: 1.7; /* Adjust the value as needed */
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="increased-line-spacing">
+
+    <h3 class="card-title font-weight-bold"> INTRODUCTION</h3>
+    <p>Thank you for taking the time to participate in the <b>Experimental Methods in Law and Economics</b> workshop.</p>
+
+    <p><i> [The sentences written in brackets and in italic mode are some practical tips when you write your instructions.]</i></p>
+    <p><i> [One of the rules explained in the bracket is broken once in the experiment. You will be asked which rules and where is broken.]</i></p>
+    <p><i>[Remember to formulate your instruction neutrally to avoid nudging participants towards either options.]</i></p>
+
+    <p>You participate in a game called prison dilemma <i>[avoid using the term game in an instruction]</i> to observe how a session in the process is set up.</p>
+
+    <p>Please give this study your full attention. You have limited time to complete it.</p>
+
+    <p>For your participation in this study, you will receive a compensation of 5 euros <i>[this is called showup fee. The rule is that no one leaves the experiment without receiving something.]</i> . Depending on how you and other participants decide in this experiment, you can earn additional money.</p>
+
+    <p>You will receive the money earned in the experiment at the end of the study. Therefore, please remain seated at the end of the experiment and follow the instructions on the last page.</p>
+
+    <p><i>[Essentially, there are two ways to make the payment: a direct payment at the end of the game or through a bank transfer. Find out the lab's preferred payment method before starting to code the experiment.]</i></p>
+
+    <p>Please do not speak during the experiment and do not attempt to communicate with other participants during the experiment. If you have any questions during the study, please raise your hand and wait for an experimenter to come to you. Violating these rules may lead to exclusion from the experiment, and you will not receive any payment.</p>
+
+    {% next_button %}
+
+</div>
+
+{% endblock %}
