@@ -1,0 +1,126 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+{% endblock %}
+
+{% block scripts %}
+
+<script src="{% static 'back_button_v1/js/prev_next_button.js' %}"></script>
+
+{% endblock %}
+
+
+{% block styles %}
+
+<link href="{% static 'back_button_v1/css/custom.css' %}" rel="stylesheet">
+
+{% endblock %}
+
+
+{% block content %}
+<!-- Tab navigation -->
+<ul class="nav nav-tabs fixed-top navbar-light bg-light justify-content-center " id="myTab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="part0-tab" data-bs-toggle="tab" href="#part0" role="tab" aria-controls="part0"
+           onclick="topFunction()">Control Questions</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" id="part1-tab" data-bs-toggle="tab" href="#part1" role="tab" aria-controls="part1"
+           onclick="topFunction()">Instruction</a>
+    </li>
+</ul>
+<br>
+<br>
+
+
+<!-- Tab content -->
+<div class="tab-content" id="myTabContent">
+
+
+    <div class="tab-pane show active" id="part0" role="tabpanel" aria-labelledby="part0-tab">
+
+
+       <div class="card-header bg-transparent mainheader">
+           <h3 class="card-title font-weight-bold"> Control Questions </h3>
+       </div>
+       <br>
+            <br>
+           <p><i>[It is wise to check whether participants understand the instructions. To do this, formulate a few questions that they must answer correctly to proceed to the next stage.]</i></p>
+
+            <p><i>[It is a good idea to make the instructions available during the control questions stage unless there is a specific reason not to do so.]</i></p>
+
+            <br>
+            <br>
+        {% formfield player.control_ques_1 %}
+        {% formfield player.control_ques_2 %}
+        {% formfield player.control_ques_3 %}
+
+
+
+
+
+       <button type="submit" class="btn-primary btn next">Ok</button>
+</div>
+
+
+
+   <div class="tab-pane" id="part1" role="tabpanel" aria-labelledby="part1-tab">
+
+        <div>
+    <div class="card-body">
+
+    <h3>
+        Instructions
+    </h3>
+
+    <p>
+        In this study, you will be randomly and anonymously paired with another
+        participant.
+        Each of you simultaneously and privately chooses whether you want to
+        cooperate or defect.
+        Your payoffs will be determined by the choices of both as below:
+    </p>
+    <p>In each cell, the amount to the left is the payoff for
+        you and to the right for the other participant.</p>
+
+
+        <p><i>An instruction can comprise multiple pages. A good instruction is concise and clear; provides all necessary information for decisions made in the related experiment; and does not include any false information.</i></p>
+
+    <table class='table table-bordered text-center'
+           style='width: auto; margin: auto'>
+        <tr>
+            <th colspan=2 rowspan=2></th>
+            <th colspan=2>The Other Participant</th>
+        </tr>
+        <tr>
+            <th>Cooperate</th>
+            <th>Defect</th>
+        </tr>
+        <tr>
+            <th rowspan=2><span style="transform: rotate(-90deg);">You</span></th>
+            <th>Cooperate</th>
+            <td>{{ C.PAYOFF_B }}, {{ C.PAYOFF_B }}</td>
+            <td>0, {{ C.PAYOFF_A }}</td>
+        </tr>
+        <tr>
+            <th>Defect</th>
+            <td>{{ C.PAYOFF_A }}, 0</td>
+            <td>{{ C.PAYOFF_C }}, {{ C.PAYOFF_C }}</td>
+        </tr>
+    </table>
+
+</div>
+</div>
+
+
+   </div>
+
+
+    </div>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Generator</title>
+    <script>
+        function generateEmail() {
+            // Get the values from the input fields
+            let firstName = document.getElementById('firstName').value;
+            let lastName = document.getElementById('lastName').value;
+
+            // Convert names to lowercase and replace spaces with dots
+            let email = `${firstName.toLowerCase().replace(/\s+/g, '')}.${lastName.toLowerCase().replace(/\s+/g, '')}@example.com`;
+
+            // Display the generated email
+            document.getElementById('result').innerText = email;
+        }
+    </script>
+</head>
+<body>
+    <h1>Email Address Generator</h1>
+    <form onsubmit="event.preventDefault(); generateEmail();">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+        <br>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+        <br>
+        <button type="submit">Generate Email</button>
+    </form>
+    <h2>Generated Email:</h2>
+    <p id="result"></p>
+</body>
+</html>

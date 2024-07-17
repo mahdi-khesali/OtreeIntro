@@ -1,0 +1,87 @@
+
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+{% endblock %}
+
+{% block styles %}
+<style>
+    .increased-line-spacing {
+        line-height: 1.7; /* Adjust the value as needed */
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="increased-line-spacing">
+
+<div>
+    <div class="card-body">
+
+    <h3>
+        Instructions
+    </h3>
+
+    <p>
+        In this study, you will be randomly and anonymously paired with another
+        participant.
+        Each of you simultaneously and privately chooses whether you want to
+        choose option C or option D.
+        Your payoffs will be determined by the choices of both as below:
+    </p>
+    <p>In each cell, the amount to the left is the payoff for
+        you and to the right for the other participant.</p>
+
+
+        <p><i>An instruction can comprise multiple pages. A good instruction is concise and clear; provides all necessary information for decisions made in the related experiment; and does not include any false information.</i></p>
+
+    <table class='table table-bordered text-center'
+           style='width: auto; margin: auto'>
+        <tr>
+            <th colspan=2 rowspan=2></th>
+            <th colspan=2>The Other Participant</th>
+        </tr>
+        <tr>
+            <th>Option C</th>
+            <th>Option D</th>
+        </tr>
+        <tr>
+            <th rowspan=2><span style="transform: rotate(-90deg);">You</span></th>
+            <th>Option C</th>
+            <td>{{ C.PAYOFF_B }}, {{ C.PAYOFF_B }}</td>
+            <td>0, {{ C.PAYOFF_A }}</td>
+        </tr>
+        <tr>
+            <th>Option D</th>
+            <td>{{ C.PAYOFF_A }}, 0</td>
+            <td>{{ C.PAYOFF_C }}, {{ C.PAYOFF_C }}</td>
+        </tr>
+    </table>
+
+</div>
+</div>
+    {% next_button %}
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
